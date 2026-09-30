@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.LineChart?>
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="app.ui.phase_1.ResultScreenController">
+    <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #f5f5f5;">
+
+        <HBox alignment="CENTER" spacing="20">
+            <VBox fx:id="resultsBox" spacing="10" alignment="TOP_LEFT"
+                  style="-fx-background-color: #e0e0e0;
+                         -fx-background-radius: 30;
+                         -fx-padding: 30;
+                         -fx-min-width: 300;
+                         -fx-max-width: 300;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 4);">
+                <Label text="Selected Parameters" style="-fx-font-weight: bold; -fx-font-size: 16px;" />
+                <!-- Parameters will be added dynamically -->
+            </VBox>
+
+
+            <VBox style="-fx-background-color: #e0e0e0; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 4);" prefWidth="800" prefHeight="500" alignment="CENTER">
+                <LineChart fx:id="lineChart" title="ODE Solution"
+                           createSymbols="false" >
+                    <xAxis>
+                        <NumberAxis label="Time"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Y"/>
+                    </yAxis>
+                </LineChart>
+            </VBox>
+        </HBox>
+    </VBox>
+</StackPane>
